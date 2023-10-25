@@ -21,5 +21,7 @@ export const throttle = (fn, limit) => {
 }
 
 export const deepClone = obj => {
-  return JSON.parse(JSON.stringify(obj))
+  return window.structuredClone 
+    ? structuredClone(obj) 
+    : JSON.parse(JSON.stringify(obj))
 }
