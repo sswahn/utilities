@@ -42,3 +42,17 @@ export const memoize = fn => {
     return result
   }
 }
+
+export const isObject = value => {
+  return value !== null && typeof value === 'object'
+}
+
+export const curry = fn => {
+  return function curried(...args) {
+    return args.length >= fn.length
+      ? fn(...args)
+      : (...args2) => curried(
+        [...args, ...args2]
+    )
+  }
+}
