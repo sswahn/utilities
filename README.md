@@ -1,11 +1,6 @@
 # Utilities
 A collection of essential utility functions for modern JavaScript applications.  
 
-## Installation
-```bash
-npm install @sswahn/utilities
-```  
-
 ## Functions  
 ### debounce  
 ```javascript
