@@ -53,7 +53,7 @@ export const memoize = fn => {
 }
 
 export const isObjectLiteral = value => {
-  return typeof value === 'object' && value !== null && !Array.isArray(value)
+  return typeof value === 'object' && value !== null && !Array.isArray(value) && value.constructor === Object
 }
 
 export const curry = fn => {
