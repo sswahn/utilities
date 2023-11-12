@@ -56,8 +56,8 @@ export const memoize = fn => {
   }
 }
 
-export const isObject = value => {
-  return value !== null && typeof value === 'object'
+export const isObjectLiteral = value => {
+  return typeof value === 'object' && value !== null && !Array.isArray(value)
 }
 
 export const curry = fn => {
