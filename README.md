@@ -19,6 +19,12 @@ Deeply clones an object. Uses the structuredClone method if available, falling b
 const newObj = deepClone(oldObj)
 ```
 
+### deepMerge
+Deeply merge two objects. 
+```javascript
+const newObj = deepMerge(target, source)
+```  
+
 ### pipe
 Creates a pipeline of functions. Useful for function composition.  
 ```javascript
