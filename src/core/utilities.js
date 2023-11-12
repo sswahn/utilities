@@ -28,11 +28,9 @@ export const deepClone = obj => {
 
 function deepMerge(target, source) {
   Object.keys(source).forEach(key => {
-    if (source[key] instanceof Object && key in target) {
-      deepMerge(target[key], source[key])
-    } else {
-      target[key] = source[key]
-    }
+    (source[key] instanceof Object && key in target)
+      ? deepMerge(target[key], source[key])
+      : target[key] = source[key]
   })
   return target
 }
