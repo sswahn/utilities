@@ -43,10 +43,10 @@ Converts a multi-argument function into a curried function.
 const curriedFunction = curry(func)
 ```
 
-### isObject
+### isObjectLiteral
 Checks if a value is an object.  
 ```javascript
-const check = isObject(value)
+const check = isObjectLiteral(value)
 ```
 
 ### License
