@@ -65,3 +65,31 @@ export const curry = fn => {
     )
   }
 }
+
+
+export const pubsub = () => {
+  let subs = {}
+  
+  const subscribe = (event, callback) => {
+    if (!subs[event]) {
+      subs[event] = []
+    }
+    subs[event] = [ ...subs[event], callback ]
+  }
+  
+  const unsubscribe = event => {
+    delete subs[event]
+  }
+  
+  const publish = (event, data) => {
+    if (subs[event]) {
+      subs[event].forEach(callback => callback(data))
+    }
+  }
+  return { subscribe, unsubscribe, publish }
+}
+
+const pixel = pubsub()
+pixel.subscribe('new_event', test)
+pixel.publish('new_event', 'Hello cruel world!')
+pixel.unsubscribe('new_event')
