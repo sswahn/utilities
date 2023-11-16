@@ -47,10 +47,10 @@ const composedFunction = pipe(func1, func2, func3)
 ### pubsub
 Subscribe to events with callbacks, and publish events on demand.
 ```javascript
-Const firePixel = () => console.log('pixel fired.')
+Const firePixel = param => console.log(param)
 const pixel = pubsub()
 pixel.subscribe('new_event', firePixel)
-pixel.publish('new_event', 'Hello cruel world!')
+pixel.publish('new_event', 'Pixel fired!')
 pixel.unsubscribe('new_event')
 ```  
 
