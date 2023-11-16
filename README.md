@@ -49,9 +49,9 @@ Subscribe to events with callbacks, and publish events on demand.
 ```javascript
 Const firePixel = param => console.log(param)
 const pixel = pubsub()
-pixel.subscribe('new_event', firePixel)
-pixel.publish('new_event', 'Pixel fired!')
-pixel.unsubscribe('new_event')
+pixel.subscribe('pixel', firePixel)
+pixel.publish('pixel', 'Pixel fired!')
+pixel.unsubscribe('pixel')
 ```  
 
 ### throttle
