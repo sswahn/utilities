@@ -20,6 +20,23 @@ export const throttle = (fn, limit) => {
   }
 }
 
+const deepArraysEqual = (arr1, arr2) => {
+  if (arr1.length !== arr2.length) {
+    return false
+  }
+  for (const [index, value] of arr1.entries()) {
+    if (Array.isArray(arr1[index]) && Array.isArray(arr2[index])) {
+      if (!deepArraysEqual(arr1[index], arr2[index])) {
+        return false
+      }
+    } 
+    if (arr1[index] !== arr2[index]) {
+      return false
+    }
+  }
+  return true
+}
+
 export const deepClone = obj => {
   return window.structuredClone 
     ? structuredClone(obj) 
