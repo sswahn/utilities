@@ -32,7 +32,7 @@ export const deepArraysEqual = (arr1, arr2) => {
 }
 
 export const deepClone = obj => {
-  return window?.structuredClone 
+  return structuredClone 
     ? structuredClone(obj) 
     : JSON.parse(JSON.stringify(obj))
 }
