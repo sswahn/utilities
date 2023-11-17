@@ -20,7 +20,7 @@ export const throttle = (fn, limit) => {
   }
 }
 
-const deepArraysEqual = (arr1, arr2) => {
+export const deepArraysEqual = (arr1, arr2) => {
   if (arr1.length !== arr2.length) {
     return false
   }
@@ -32,7 +32,7 @@ const deepArraysEqual = (arr1, arr2) => {
 }
 
 export const deepClone = obj => {
-  return window.structuredClone 
+  return window?.structuredClone 
     ? structuredClone(obj) 
     : JSON.parse(JSON.stringify(obj))
 }
@@ -44,6 +44,19 @@ function deepMerge(target, source) {
       : target[key] = source[key]
   })
   return target
+}
+
+export const deepObjectsEqual = (a, b) => {
+  if (a === b) {
+    return true
+  }
+  if (typeof a !== 'object' || typeof b !== 'object') {
+    return false
+  }
+  return (
+    Object.keys(a).length === Object.keys(b).length &&
+    Object.keys(a).every(key => deepEqual(a[key], b[key]))
+  )
 }
 
 export const pipe = (...fns) => {
