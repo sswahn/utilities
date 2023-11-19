@@ -1,5 +1,5 @@
 # Utilities
-A collection of essential utility functions for modern JavaScript applications.  
+A collection of utility functions.
 
 ## Functions  
 
